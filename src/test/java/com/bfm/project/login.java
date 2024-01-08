@@ -35,7 +35,7 @@ public class login extends Baseclass{
 	public static  SimpleDateFormat sdf= new SimpleDateFormat("hh:mm:ss");
 	public static  String date=sdf.format(dt);
 	public static String dt1=date.replace(":","");
-	@Test(priority=1)
+	@Test(priority=1, description="Login")
 public static void login() throws IOException, InterruptedException
 	{
 //		createReport();
@@ -72,7 +72,7 @@ System.out.println("Login suceesfully move to Home Page");
 Thread.sleep(3000);
 
 }
-	@Test(priority=3)
+	@Test(priority=3,description="Registration")
 	public static void createacc() throws InterruptedException, IOException
 	{
 			
@@ -132,7 +132,7 @@ Thread.sleep(3000);
 		regbtn.click();
 		
 	}
-	@Test(dependsOnMethods="login")
+	@Test(dependsOnMethods="login",description="LogOut")
 	public static void logoutTheAccount() throws IOException, InterruptedException
 	{
 		createTest("LogOut Account");
