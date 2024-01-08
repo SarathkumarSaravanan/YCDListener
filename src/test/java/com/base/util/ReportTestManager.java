@@ -27,8 +27,8 @@ public static synchronized ExtentTest startTest(String testName,String className
 {
 	ExtentTest test = extent.createTest(testName,className);
 	extentTestMap.put((int)(long) (Thread.currentThread().getId()), test);
-	test.assignAuthor("QA");
-	test.assignCategory(className);
+	// test.assignAuthor("QA");
+	// test.assignCategory(className);
 	return test;
 }
 public static synchronized void logText(String message)
