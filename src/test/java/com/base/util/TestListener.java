@@ -36,16 +36,18 @@ public class TestListener implements ITestListener {
 	public void onTestStart(ITestResult result)
 	{
 		String description =result.getMethod().getDescription();
+		
 		System.out.println("I am in onTestSucess method"+getTestMetodName(result)+"suceed");
-		if(description!=null)
-		ReportTestManager.startTest(result.getMethod().getMethodName()+"("+description+")",result.getInstance().getClass().getCanonicalName());
-		else if (result.getTestName()!=null)
-		{
-			ReportTestManager.startTest(result.getTestName(),result.getInstance().getClass().getCanonicalName());
-		}
-		else {
-			ReportTestManager.startTest(result.getMethod().getMethodName(),result.getInstance().getClass().getCanonicalName());
-		}
+		ReportTestManager.startTest(result.getMethod().getDescription(),result.getInstance().getClass().getCanonicalName());
+		// if(description!=null)
+		// ReportTestManager.startTest(result.getMethod().getMethodName()+"("+description+")",result.getInstance().getClass().getCanonicalName());
+		// else if (result.getTestName()!=null)
+		// {
+		// 	ReportTestManager.startTest(result.getTestName(),result.getInstance().getClass().getCanonicalName());
+		// }
+		// else {
+		// 	ReportTestManager.startTest(result.getMethod().getMethodName(),result.getInstance().getClass().getCanonicalName());
+		// }
 		System.out.println("I am in onTestStart method"+getTestMetodName(result)+"start");
 		}
 	public void onTestSuccess(ITestResult result)
