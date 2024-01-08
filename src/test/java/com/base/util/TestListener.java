@@ -69,7 +69,7 @@ public class TestListener implements ITestListener {
 		// TODO Auto-generated catch block
 		e1.printStackTrace();
 	}
-	String Imagepath="../target/"+ScreenshotId+".png";
+	String Imagepath="../ws/target/"+ScreenshotId+".png";
 	ReportTestManager.getTest().log(Status.FAIL, result.getThrowable());
 	ReportTestManager.getTest().fail("deatils",MediaEntityBuilder.createScreenCaptureFromPath(Imagepath).build());
 
